@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1300, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="https://use.fontawesome.com/1744f3f671.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous">
+    </script>
+    <!-- Anchor links -->
+    <script>
+    $(document).ready(function() {
+        $('.scroll-link').click(function(e) {
+          e.preventDefault();
+          var target = $(this).attr('href');
+          $('html, body').animate({
+            scrollTop: $(target).offset().top
+          }, 500);
+        });
+      });
+      </script>
+<!-- button-scroll -->
+<script>
+    $(document).ready(function() {
+      var isScrolling = false;
+      
+      $('.scroll-link').click(function(e) {
+        e.preventDefault();
+      
+        if (isScrolling) {
+          return;
+        }
+      
+        isScrolling = true;
+      
+        var target = $(this).attr('href');
+        $('html, body').stop().animate({
+          scrollTop: $(target).offset().top
+        }, 500, function() {
+          isScrolling = false;
+        });
+      });
+      
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+          $('#scrollToTopBtn').stop().fadeIn();
+        } else {
+          $('#scrollToTopBtn').stop().fadeOut();
+        }
+      
+        if ($(this).scrollTop() === 0) {
+          isScrolling = false; // Разблокировка кнопки при достижении верха страницы
+        }
+      });
+      
+      $('#scrollToTopBtn').click(function() {
+      
+        if (isScrolling) {
+          return;
+        }
+      
+        isScrolling = true;
+      
+        $('html, body').stop().animate({scrollTop: 0}, 100, function() {
+          isScrolling = false;
+        });
+      
+        return false;
+      });
+    });
+  </script>
+  
+    <title>Restauracja</title>
+</head>
+<body>
+
+ <div class="header">
+    <div class="container">
+        <div class="header_line">
+            <div class="header_logo">
+                <img src="img/LOGO.png" alt="logo">
+            </div>
+
+
+            <div class="nav">
+                <a class="nav-item" href="#section1" class="scroll-link">Strona główna</a>
+                <a class="nav-item" href="#section2" class="scroll-link">Menu</a>
+                <a class="nav-item" href="#" class="scroll-link">O nas</a>
+                <a class="nav-item" href="#">Rezerwacja</a>
+            </div>
+
+            <div class="cart">
+                <a href="#">
+                    <img class="cart-img" src="img/bag.png" alt="cart" >
+            </a>
+            </div>
+
+            
+        <div class="btn">
+            <a class="button" href="@strona dla umowienia wizyty">ZAREZERWUJ STOLIK</a>
+        </div>
+        </div>
+        <section id="section1">
+
+        <div class="header-down">
+
+            <div class="header-title">
+                
+                Witamy w
+
+                <div class="header-subtitle">
+                    Naszej restauracji
+                </div>
+
+                <div class="header-suptitle">
+                    DOM NAJLEPSZEGO JEDZENIA
+                </div>
+
+                <div class="header-button-container">
+                    <a class="header_menu-button" href="#">Menu</a>
+                </div>
+            
+            </div>
+            
+
+        </div>
+    </section>       
+    </div>
+
+</div>
+
+<div class="cards">
+
+    <div class="container">
+    
+    <div class="cards-holder">
+    
+        <div class="card">
+
+            <div class="card-image">
+                <img class="card-img" src="img/pot-and-lid.png" style="width: auto;" alt="#">
+            </div>
+
+            <div class="card_title">
+                Magiczna  &nbsp; <span>Atmosfera</span>
+            </div>
+
+            <div class="card_desc">
+                W naszej restauracji panuje magiczna atmosfera pełna smakowitych aromatów
+            </div>
+
+
+        </div>
+                    <div class="card">
+
+                        <div class="card-image">
+                            <img class="card-img" src="img/pot-and-lid.png" style="width: auto;" alt="#">
+                        </div>
+
+                        <div class="card_title">
+                            Najwyższa jakość &nbsp;  <span>Jedzenia</span>
+                        </div>
+
+                        <div class="card_desc">
+                            Jakość naszego jedzenia jest doskonała!
+
+                        </div>
+
+
+                    </div>
+                      <div class="card">
+                        <div class="card-image">
+                        
+                            <img class="card-img" src="img/pot-and-lid.png" style="width: auto;" alt="#">
+                      
+                        </div>
+                    <div class="card_title">                                        
+                        Tanie &nbsp; <span>Jedzenie</span>
+                    </div>
+                                    <div class="card_desc">
+                                        Koszt naszych dań zależy tylko od ich ilości. Jakość zawsze na najwyższym poziomie!
+                                    </div>
+                      </div>
+                 </div>
+</div>
+</div>
+<div class='history'>
+
+    <div class='container'>
+
+        <div class='history-holder'>
+            <div class='history-info'>
+                <div class='history-title'>
+                    Nasza <span>Historia</span>
+                </div>
+
+                <div class='history-desc'>
+                    Podobnie jak w każdym innym autentycznym miejscu, mamy swoją własną, wyjątkową historię. Pomysł na restaurację pojawił się u założycieli niespodziewanie. Podczas spaceru po lesie założyciel naszej restauracji utknął setki kilometrów od najbliższej miejscowości i zdecydował się na założenie restauracji w malowniczym zakątku przyrody. To miejsce stało się naszym domem i inspiracją do tworzenia wyjątkowych dań.
+                </div>
+
+
+                <div class='history-number'>
+                    <div class='number-item'>
+                        93 <span>Napoje</span>
+                    </div>
+
+                    <div class='number-item'>
+                        206 <span>Jedzenie</span>
+                    </div>
+
+                    <div class='number-item'>
+                        71 <span>Przystawki</span>
+                    </div>
+                </div>
+            </div>
+
+           <div class="history-images">
+                <div>
+                    <img class="image_1" src="img/1.jpg" alt="#">
+                </div>
+                <div>
+                    <img class="image_2" src="img/2.jpg" alt="#">
+                </div>
+                <div>
+                    <img class="image_3" src="img/3.jpg" alt="#">
+                </div>
+            </div> 
+      
+    </div>
+
+    </div>
+
+</div>
+
+<div class="black-block">
+
+    <div class="container">
+
+        <div class="block-holder">
+            <div class="left">
+                <div class="left-title">
+                    Świętuj w jednej z <br> najlepszych restauracji.
+                </div>
+                <div class="left-text">
+                    Tylko w tym miesiącu lunch biznesowy od 80 zł
+                </div>
+        
+            </div>
+
+            <div class="right">
+                <div class="right-button">
+                    <a href="#" class="right-btn">ZAREZERWUJ STOLIK</a>
+                </div>
+            </div>
+    </div>
+
+    </div>
+
+</div>
+
+<div class="dishes">
+    <div class="container">
+        <div class="dishes-title">
+            Nasze <span>dania</span>
+        </div>
+
+        <div class="burgers">
+                <div class="burgers-image">
+                <img class="pizza" src="img/pizza-1.png" alt="pizza">
+            </div>
+
+            <div class="burgers-item">
+                <div class="burger-item">
+                    <img src="img/hamburger-494706_1920 1.png" alt="@hamburger" class="burger">
+                    <div class="burger-text">
+                        Hamburgery Mini --------------- 15 zł
+                    </div>
+                </div>
+
+                <div class="burger-item">
+                    <img src="img/hamburger-494706_1920 1.png" alt="@hamburger" class="burger">
+                    <div class="burger-text">
+                        Hamburgery Mini --------------- 15 zł
+                    </div>
+                </div>
+                
+                <div class="burger-item">
+                    <img src="img/hamburger-494706_1920 1.png" alt="@hamburger" class="burger">
+                    <div class="burger-text">
+                        Hamburgery Mini --------------- 15 zł
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="section2">
+
+<div class="menu">
+
+    <div class="container">
+
+        <div class="menu-title">
+            Menu <span>Restauracji</span>
+        </div>
+
+        <div class="menu-items">
+
+            <div class="menu-item">
+                <div class="menu-image">
+                    <img class="menu-img" src="img/burger-menu.png" alt="#">
+                    <div class="price">
+                        <img class="price-img" src="img/price.png" alt="#">
+                        <div class="price-25">
+                            25
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-text">
+                    Hamburgery Max
+                </div>
+                <div class="sub-text">
+                    Maksymalnie gruby <br> plaster mięsa
+                </div>
+                <div class="menu-button">
+                    <a href="#" class="menu-btn">Zamów</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-image">
+                    <img class="menu-img" src="img/burger-menu.png" alt="#">
+                    <div class="price">
+                        <img class="price-img" src="img/price.png" alt="#">
+                        <div class="price-25">
+                            25
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-text">
+                    Hamburgery Max
+                </div>
+                <div class="sub-text">
+                    Maksymalnie gruby <br> plaster mięsa
+                </div>
+                <div class="menu-button">
+                    <a href="#" class="menu-btn">Zamów</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-image">
+                    <img class="menu-img" src="img/burger-menu.png" alt="#">
+                    <div class="price">
+                        <img class="price-img" src="img/price.png" alt="#">
+                        <div class="price-25">
+                            25
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-text">
+                    Hamburgery Max
+                </div>
+                <div class="sub-text">
+                    Maksymalnie gruby <br> plaster mięsa
+                </div>
+                <div class="menu-button">
+                    <a href="#" class="menu-btn">Zamów</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<div class="coment">
+    <div class="sestim-donials">
+        <h1>Opinie</h1>
+        <div class="sectionesag"></div>
+
+    <div class="coment-text">
+        Na długo zapamiętam moje urodziny spędzone w tej restauracji! Szczególne podziękowania za komplement w postaci talerza owoców. Będziemy polecać tę restaurację naszym przyjaciołom i rodzinie podróżującej do Warszawy!!!
+    </div>
+
+    <div class="coment-image">
+        <img src="img/beard-1845166_1920 1.png" alt="#" class="coment-img">
+    </div>
+
+    <div class="coment-type">
+        Gość
+    </div>
+    
+    <div class="coment-name">
+        Erick
+    </div>
+
+    
+    <div class="koguvcavis-varazdel">
+       
+        <div class="sagestim-lonials">
+        <div class="vemotau-vokusipol">
+        <div class="testimonial">
+        <img src="img/5640570.jpg" alt="#">
+        <div class="gecedanam">Tomasz</div>
+        <div class="apogered-gselected">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        </div>
+      
+        <p>Świetna obsługa, autentyczna atmosfera i niesamowicie smaczne jedzenie sprawiły, że moja wizyta w tej restauracji była po prostu niezapomniana!</p>
+        </div>
+        </div>
+      
+        <div class="vemotau-vokusipol">
+        <div class="testimonial">
+        <img src="img/2047084.jpg" alt="#">
+        <div class="gecedanam">Daniel</div>
+        <div class="apogered-gselected">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        </div>
+      
+        <p>Świetna obsługa, autentyczna atmosfera i niesamowicie smaczne jedzenie sprawiły, że moja wizyta w tej restauracji była po prostu niezapomniana!
+        </p>
+        </div>
+        </div>
+      
+        <div class="vemotau-vokusipol">
+        <div class="testimonial">
+        <img src="img/7890600.jpg" alt="#">
+        <div class="gecedanam">Kacper</div>
+        <div class="apogered-gselected">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        </div>
+      
+        <p>Świetna obsługa, autentyczna atmosfera i niesamowicie smaczne jedzenie sprawiły, że moja wizyta w tej restauracji była po prostu niezapomniana!
+        </p>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="gallery">
+
+    <div class="container">
+
+        <div class="galery-title">
+            Galeria <span>dań</span>
+        </div>
+
+        <div class="gallery-content">
+
+            <div class="gallery-left">
+                <div class="gallery-up">
+                    <img class="img-gal high" src="img/table-glass.png" alt="#">
+                </div>
+                <div class="gallery-down">
+                    <img class="img-gal" src="img/coffee.png" alt="#">
+                    <img class="img-gal" src="img/goulash.png" alt="#">
+                </div>
+            </div>
+            <div class="gallery-right">
+                <div class="gallery-up">
+                    <img class="img-gal" src="img/coffee.png" alt="#">
+                    <img class="img-gal" src="img/goulash.png" alt="#">
+                </div>
+                <div class="gallery-down">
+                    <img class="img-gal high" src="img/table-glass.png" alt="#">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cook">
+
+        <div class="container">
+            
+            <div class="cook-title">
+                Nasze <span>kucharze</span>
+            </div>   
+
+            <div class="cook-content">
+                <img src="img/c2.png" alt="#" style="padding-right: 30px;">
+                <img src="img/1c.png" alt="#">
+            </div>
+        </div>
+
+</div>
+
+<div class="footer">
+    <div class="footer-content">
+
+    <div class="phone">
+        <div class="phone-holder">
+            <div class="phone-img">
+              <img src="img/phone.png" alt="phone">
+        </div>
+
+        <div class="number">
+            <a class="num" href="tel:+48791222222">&nbsp;&nbsp;+48-791-222-222</a>
+        </div>
+            </div>
+
+        <div class="phone-text">
+            Skontaktuj się z nami <br> w celu rezerwacji
+        </div>
+</div> 
+
+    <div class="copy-right">
+    &copy; 2023
+    </div>
+
+<div class="adres">
+    WARSZAWA<br>
+ul. Szeroki Dunaj 1/3<br>
+Stare Miasto
+</div>
+
+</div>
+<button id="scrollToTopBtn" title="Наверх">↑</button>
+
+</body>
+</html>
